@@ -1,0 +1,779 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@700&display=swap'); */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all .7s ease-in-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Gabarito', cursive; */
+    font-weight: 600;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #707070;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(219, 219, 219);
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 24, 39);
+}
+
+.form-login {
+    z-index: 2;
+    position: relative;
+    gap: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    height: 180px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div.form-login form[method="POST"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+}
+
+input {
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+    outline: none;
+    padding: 8px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+input#login {
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    border-radius: 20px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+input#login:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(100px);
+}
+
+input::placeholder {
+    color: rgb(212, 212, 212);
+}
+
+.h3-login {
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    display: flex;
+    gap: 5px;
+}
+
+
+div.kotak {
+    position: absolute;
+    filter: blur(254px);
+}
+
+div.kotak:nth-child(1) {
+    width: 600px;
+    height: 300px;
+    background-color: rgb(255, 0, 128);
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+div.kotak:nth-child(2) {
+    width: 500px;
+    height: 500px;
+    background-color: rgb(0, 132, 255);
+    right: 0;
+    bottom: 0;
+}
+
+div.kotak:nth-child(3) {
+    width: 400px;
+    height: 400px;
+    background-color: rgb(233, 255, 111);
+}
+
+div.hiasan {
+    position: absolute;
+}
+
+img.bg-saver {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(40px);
+    opacity: .3;
+}
+
+.container-main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(17, 24, 39);
+    justify-content: space-around;
+}
+
+.judul-main {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: white;
+}
+
+.navbar {
+    z-index: 7;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    width: 98%;
+    height: 10%;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    top: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+div.navbar div {
+    padding: 5px;
+}
+
+div.navbar div.menu {
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: all .4s ease-in-out;
+}
+
+div.navbar div.menu:hover {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    position: relative;
+}
+
+div.navbar div.menu:hover div.menu-content {
+    display: block;
+}
+
+div.navbar div.menu div.menu-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    left: -1px;
+    right: -55px;
+    top: 32px;
+    backdrop-filter: blur(1px);
+}
+
+div.navbar div.menu div.menu-content ul li {
+    list-style: none;
+}
+
+div.navbar div.menu div.menu-content ul li a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+}
+
+div.judul-list-ip {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.user-inimah {
+    position: relative;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* padding: 0px; */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 20%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.kanan-atas {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.kanan-bawah {
+    width: 100%;
+    height: 65%;
+    overflow: auto;
+    padding: 5px;
+}
+
+div.nama-sama-role {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.user-lain {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: default;
+}
+
+div.user-lain-nama {
+    gap: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+img.verified-atas {
+    width: 13px;
+    /* top: 8%; */
+}
+
+.baris-verified {
+    display: flex;
+    align-items: center;
+}
+
+img.verified-lain {
+    width: 13px;
+    /* position: relative; */
+    top: 9%;
+    /* left: 85%; */
+    margin-left: 2px;
+}
+
+img.pp {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: default;
+    border: 2px solid white;
+    padding: 2px
+}
+
+img.pp-lain {
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid white;
+    padding: 1px;
+}
+
+div.departemen {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    right: 35%;
+    backdrop-filter: blur(2px);
+    color: rgb(255, 255, 255);
+    cursor: default;
+}
+
+div.departemen-bawah {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(2px);
+    color: rgb(255, 255, 255);
+    height: 28px;
+    float: right;
+    cursor: default;
+}
+
+h5.siapaini {
+    color: white;
+    white-space: nowrap;
+    cursor: default;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    justify-content: center;
+}
+
+h6.role {
+    color: rgba(255, 255, 255, 0.4);
+    cursor: default;
+}
+
+div#logout {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 53, 53, 1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+div#logout:hover {
+    background-color: rgba(255, 53, 53, .5);
+}
+
+.content {
+    /* padding: 20px; */
+    border-radius: 20px;
+    z-index: 4;
+    position: relative;
+    color: white;
+    width: 98%;
+    height: 80%;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+}
+
+.content div.kiri-content {
+    width: 80%;
+    height: 100%;
+}
+
+.content div.kanan-content {
+    width: 20%;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.atas-content {
+    height: 10%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.judulapp {
+    margin-left: 10px;
+}
+
+.caritoko {
+    width: 15%;
+    height: 60%;
+    margin-right: 10px;
+}
+
+.tengah-content {
+    display: flex;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+div.list-ip {
+    width: 70%;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.list-ip-screensaver {
+    width: 70%;
+    height: 70%;
+    border-radius: 20px;
+    /* display: flex; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+span.text-screensaver1 {
+    display: none;
+}
+
+span.text-screensaver2 {
+    display: none;
+}
+
+span.text-screensaver3 {
+    display: none;
+}
+
+button.btn {
+    padding: 3px;
+    cursor: pointer;
+    border: none;
+}
+
+button.ping {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(1px);
+}
+
+button.tracert {
+    border-radius: 5px;
+    background-color: rgba(82, 22, 194, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(1px);
+}
+
+button.vnc {
+    border-radius: 5px;
+    background-color: rgba(19, 155, 49, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(1px);
+}
+
+button.ftp {
+    border-radius: 5px;
+    background-color: rgba(209, 150, 40, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(1px);
+}
+
+button.web {
+    border-radius: 5px;
+    background-color: rgba(209, 51, 40, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(1px);
+}
+
+button.winbox {
+    border-radius: 5px;
+    background-color: rgba(32, 110, 201, 0.4);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(1px);
+}
+
+button.mac {
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(1px);
+}
+
+button.submit-mac {
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(1px);
+}
+
+button.red {
+    border-radius: 20px;
+    background-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(1px);
+    width: 10%;
+}
+
+button.hapus-mac {
+    border-radius: 20px;
+    background-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(1px);
+}
+
+.sm {
+    width: 80%;
+}
+
+.kecil {
+    width: 20%;
+}
+
+button.green {
+    border-radius: 20px;
+    background-color: rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(1px);
+    width: 10%;
+}
+
+table {
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+table,
+tr,
+td,
+th {
+    border-radius: 15px;
+    border-collapse: collapse;
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    height: 45px;
+    padding: 10px;
+}
+
+th {
+    text-align: left;
+}
+
+div.modal-contain-profile {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+div.modal-profile {
+    color: white;
+    width: 30%;
+    height: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.content-modal-atas {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.judul-sama-refresh {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.content-modal-atas p:nth-child(2) {
+    color: rgb(255, 110, 110);
+    cursor: pointer;
+}
+
+div.content-modal-bawah-profile {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-save-profile {
+    cursor: pointer;
+}
+
+.btn-save-profile:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(100px);
+}
+
+div.modal-contain-mac {
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+div.modal-mac {
+    color: white;
+    width: 70%;
+    height: 45%;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.content-modal-bawah-mac {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+div.content-modal-bawah-kiri-mac {
+    height: 90%;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.content-modal-bawah-kiri-mac-tambahmac {
+    display: flex;
+    gap: 2%;
+}
+
+div.content-modal-bawah-kanan-mac {
+    overflow-x: auto;
+    height: 90%;
+    width: 50%;
+    padding: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toko-copy {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#svg-copy {
+    cursor: pointer;
+}
