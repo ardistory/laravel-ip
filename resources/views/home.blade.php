@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network G157</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Net | {{ $title }}</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/picture/network-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
@@ -110,7 +110,7 @@
                 <div class="menu-content">
                     <ul>
                         <li>
-                            <div class="app-list-ip" onclick="loadContent('./app/app-list-ip.php');">List IP</div>
+                            <div class="app-list-ip">List IP</div>
                         </li>
                         <li>
                             <div>Check WDCP Y</div>
@@ -151,13 +151,13 @@
         <div class="content">
             <div class="kiri-content" id="kiri-content">
                 <div class="atas-content">
-                    <h2 class="judulapp">List IP</h2>
+                    <h2 class="judulapp">Data IP</h2>
                     <input type="text" placeholder="Search.." class="caritoko" id="caritoko" tabindex="1">
                 </div>
                 <div class="tengah-content">
                     <div class="list-ip-screensaver">
                         <span class="text-screensaver1">Back End <span style="color:lightgreen">OK</span></span>
-                        <span class="text-screensaver2">PHP Version <?= phpversion() ?><span style="color:lightgreen">
+                        <span class="text-screensaver2">PHP Version {{ phpversion() }}<span style="color:lightgreen">
                                 OK</span></span>
                         <span class="text-screensaver3">JavaScript <span style="color:lightgreen">OK</span></span>
                     </div>
@@ -240,26 +240,36 @@
                         <img src="img/picture/default.png" alt="photo-profile" class="pp">
                     @endif
                     <h5 class="siapaini">
-                        @if (Session::get('is_verify') == 1)
-                            <?= strtoupper(Session::get('name')) ?><img src="img/picture/verified3.png"
+
+                        @php
+                            $isVerify = Session::get('is_verify');
+                        @endphp
+
+                        @if ($isVerify == 1)
+                            {{ strtoupper(Session::get('name')) }} <img src="img/picture/verified3.png"
                                 class="verified-atas">
-                            <?php elseif ($_SESSION['is_verify'] == 2) : ?>
-                            <?= strtoupper($_SESSION['name']) ?><img src="img/picture/verified3.png"
+                        @elseif ($isVerify == 2)
+                            {{ strtoupper(Session::get('name')) }}<img src="img/picture/verified3.png"
                                 class="verified-atas"><img src="img/picture/verified_red.png" class="verified-atas">
-                            <?php else : ?>
-                            <?= strtoupper($_SESSION['name']) ?>
-                            <?php endif; ?>
+                        @else
+                            {{ strtoupper(Session::get('name')) }}
+                        @endif
                     </h5>
-                    <?php if ($_SESSION['akses'] == 1) : ?>
-                    <h6 class="role">Administrator</h6>
-                    <?php elseif ($_SESSION['akses'] == 2) : ?>
-                    <h6 class="role">Web Administrator</h6>
-                    <?php else : ?>
-                    <h6 class="role">Member</h6>
-                    <?php endif; ?>
+
+                    @php
+                        $akses = Session::get('akses');
+                    @endphp
+
+                    @if ($akses == 1)
+                        <h6 class="role">Administrator</h6>
+                    @elseif ($akses == 2)
+                        <h6 class="role">Web Administrator</h6>
+                    @else
+                        <h6 class="role">Member</h6>
+                    @endif
                 </div>
                 <div class="kanan-bawah">
-                    <?php foreach ($ambilSemuaUser as $dataUser) : ?>
+                    {{-- <?php foreach ($ambilSemuaUser as $dataUser) : ?>
                     <?php if ($dataUser['name'] != $_SESSION['name']) : ?>
                     <div class="user-lain">
                         <div class="user-lain-nama">
@@ -287,7 +297,7 @@
                         <div class="departemen-bawah"><?= $dataUser['departemen'] ?></div>
                     </div>
                     <?php endif; ?>
-                    <?php endforeach; ?>
+                    <?php endforeach; ?> --}}
 
 
                     <!-- <script>

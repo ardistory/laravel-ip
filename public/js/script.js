@@ -30,27 +30,7 @@ logout.addEventListener('click', () => {
         position: 'center', // Posisi pemberitahuan di tengah
         buttons: [
             ['<button><b>OK</b></button>', function (instance, toast) {
-                // Aksi yang dilakukan jika pengguna mengklik tombol "OK"
-                // Contoh: Lakukan permintaan AJAX atau aksi yang sesuai
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', '../server/logout.php', true);
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        iziToast.success({
-                            title: 'Success!',
-                            message: xhr.responseText,
-                            pauseOnHover: false,
-                            position: 'center',
-                            timeout: 1000,
-                            overlay: true,
-                            close: false,
-                            onClosing: function () {
-                                document.location.reload();
-                            }
-                        });
-                    }
-                };
-                xhr.send();
+                document.location.href = '/logout';
                 instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
             }, true],// Atur tombol "OK" sebagai tombol default
             ['<button>Cancel</button>', function (instance, toast) {

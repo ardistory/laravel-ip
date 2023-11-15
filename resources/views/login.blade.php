@@ -30,7 +30,10 @@
             </h3>
             <form method="POST">
                 @csrf
-                <input type="text" placeholder="Username" id="username" name="username">
+                <input type="text" placeholder="Username" id="username" name="username"
+                    @isset($bekas_user)
+                    value="{{ $bekas_user }}"
+                @endisset>
                 <input type="password" placeholder="Password" id="password" name="password">
                 <input type="submit" id="login" value="Log In">
             </form>

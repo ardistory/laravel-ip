@@ -6,7 +6,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -17,7 +16,7 @@ class UserController extends Controller
         ]);
     }
 
-    public function postLogin(Request $request): RedirectResponse
+    public function postLogin(Request $request): RedirectResponse|Response
     {
         $username = $request->post('username');
         $password = $request->post('password');
@@ -43,15 +42,16 @@ class UserController extends Controller
                 } else {
                     return response()->view('login', [
                         'title' => 'Login',
-                        'error' => 'Password salah!'
+                        'error' => 'Password salah!',
+                        'bekas_user' => $username
                     ]);
                 }
             }
-        } else {
-            return response()->view('login', [
-                'title' => 'Login',
-                'error' => 'Username & password salah'
-            ]);
         }
+
+        return response()->view('login', [
+            'title' => 'Login',
+            'error' => 'Username & password salah'
+        ]);
     }
 }
