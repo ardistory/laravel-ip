@@ -1,21 +1,6 @@
 const cekAkses = document.getElementById('cekAkses');
 const userId = document.getElementById('userId');
 const isTimNet = document.getElementById('isTimNet');
-
-const text_screensaver1 = document.querySelector('.text-screensaver1');
-const text_screensaver2 = document.querySelector('.text-screensaver2');
-const text_screensaver3 = document.querySelector('.text-screensaver3');
-
-setTimeout(() => {
-    text_screensaver1.style.display = 'block';
-}, 500);
-setTimeout(() => {
-    text_screensaver2.style.display = 'block';
-}, 1000);
-setTimeout(() => {
-    text_screensaver3.style.display = 'block';
-}, 1500);
-
 const logout = document.getElementById('logout');
 
 logout.addEventListener('click', () => {

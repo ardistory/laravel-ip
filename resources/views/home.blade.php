@@ -155,12 +155,6 @@
                     <input type="text" placeholder="Search.." class="caritoko" id="caritoko" tabindex="1">
                 </div>
                 <div class="tengah-content">
-                    <div class="list-ip-screensaver">
-                        <span class="text-screensaver1">Back End <span style="color:lightgreen">OK</span></span>
-                        <span class="text-screensaver2">PHP Version {{ phpversion() }}<span style="color:lightgreen">
-                                OK</span></span>
-                        <span class="text-screensaver3">JavaScript <span style="color:lightgreen">OK</span></span>
-                    </div>
                     <div class="list-ip">
                         <div class="judul-list-ip">
                             <div class="toko-copy">
@@ -269,35 +263,35 @@
                     @endif
                 </div>
                 <div class="kanan-bawah">
-                    {{-- <?php foreach ($ambilSemuaUser as $dataUser) : ?>
-                    <?php if ($dataUser['name'] != $_SESSION['name']) : ?>
-                    <div class="user-lain">
-                        <div class="user-lain-nama">
-                            <img src="img/picture/<?= $dataUser['image'] ?>" alt="photo-profile" class="pp-lain">
-                            <div class="nama-sama-role">
-                                <?php if ($dataUser['is_verify'] == 1) : ?>
-                                <h5 class="baris-verified"><?= strtoupper($dataUser['name']) ?><img
-                                        src="img/picture/verified3.png" class="verified-lain"></h5>
-                                <?php elseif ($dataUser['is_verify'] == 2) : ?>
-                                <h5 class="baris-verified"><?= strtoupper($dataUser['name']) ?><img
-                                        src="img/picture/verified3.png" class="verified-lain"><img
-                                        src="img/picture/verified_red.png" class="verified-lain"></h5>
-                                <?php else : ?>
-                                <h5 class="baris-verified"><?= strtoupper($dataUser['name']) ?></h5>
-                                <?php endif; ?>
-                                <?php if ($dataUser['akses'] == 1) : ?>
-                                <h6 class="role">Administrator</h6>
-                                <?php elseif ($dataUser['akses'] == 2) : ?>
-                                <h6 class="role">Web Administrator</h6>
-                                <?php else : ?>
-                                <h6 class="role">Member</h6>
-                                <?php endif; ?>
+                    @foreach ($semua_user as $user)
+                        @if ($user->name != Session::get('name'))
+                            <div class="user-lain">
+                                <div class="user-lain-nama">
+                                    <img src="img/picture/{{ $user->image }}" alt="photo-profile" class="pp-lain">
+                                    <div class="nama-sama-role">
+                                        @if ($user->is_verify == 1)
+                                            <h5 class="baris-verified">{{ strtoupper($user->name) }}<img
+                                                    src="img/picture/verified3.png" class="verified-lain"></h5>
+                                        @elseif ($user->is_verify == 2)
+                                            <h5 class="baris-verified">{{ strtoupper($user->name) }}<img
+                                                    src="img/picture/verified3.png" class="verified-lain"><img
+                                                    src="img/picture/verified_red.png" class="verified-lain"></h5>
+                                        @else
+                                            <h5 class="baris-verified">{{ strtoupper($user->name) }}</h5>
+                                        @endif
+                                        @if ($user->akses == 1)
+                                            <h6 class="role">Administrator</h6>
+                                        @elseif ($user->akses == 2)
+                                            <h6 class="role">Web Administrator</h6>
+                                        @else
+                                            <h6 class="role">Member</h6>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="departemen-bawah">{{ $user->departemen }}</div>
                             </div>
-                        </div>
-                        <div class="departemen-bawah"><?= $dataUser['departemen'] ?></div>
-                    </div>
-                    <?php endif; ?>
-                    <?php endforeach; ?> --}}
+                        @endif
+                    @endforeach
 
 
                     <!-- <script>
