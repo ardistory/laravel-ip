@@ -145,7 +145,7 @@ img.bg-saver {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    filter: blur(40px);
+    filter: blur(1px);
     opacity: .3;
 }
 
