@@ -13,12 +13,11 @@
 </head>
 
 <body>
-    <img src="img/picture/wateroil.png" class="bg-saver">
+    <img src="img/picture/wateroil2.png" class="bg-saver">
     <div class="container">
         <div class="form-login">
             <h3 class="h3-login">
-                <svg width="24px" height="24px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
-                    fill="#ffffff">
+                <svg width="24px" height="24px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
@@ -30,10 +29,8 @@
             </h3>
             <form method="POST">
                 @csrf
-                <input type="text" placeholder="Username" id="username" name="username"
-                    @isset($bekas_user)
-                    value="{{ $bekas_user }}"
-                @endisset>
+                <input type="text" placeholder="Username" id="username" name="username" @isset($bekas_user)
+                    value="{{ $bekas_user }}" @endisset>
                 <input type="password" placeholder="Password" id="password" name="password">
                 <input type="submit" id="login" value="Log In">
             </form>
@@ -41,15 +38,15 @@
     </div>
 
     @isset($error)
-        <script>
-            iziToast.error({
-                position: 'topCenter',
-                title: 'Error 404!',
-                message: '{{ $error }}',
-                pauseOnHover: false,
-                close: false
-            });
-        </script>
+    <script>
+        iziToast.error({
+            position: 'topCenter',
+            title: 'Error 404!',
+            message: '{{ $error }}',
+            pauseOnHover: false,
+            close: false
+        });
+    </script>
     @endisset
 
 </body>

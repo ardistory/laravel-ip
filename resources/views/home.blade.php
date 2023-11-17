@@ -89,7 +89,7 @@
     <input type="hidden" value="{{ Session::get('akses') }}" id="cekAkses" style="color: black">
     <input type="hidden" value="{{ Session::get('is_timnet') }}" id="isTimNet" style="color: black">
 
-    <img src="img/picture/wateroil.png" class="bg-saver" alt="bg-image">
+    <img src="img/picture/wateroil2.png" class="bg-saver" alt="bg-image">
     <div class="container-main">
         <div class="navbar">
             <div class="judul-main">
