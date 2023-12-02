@@ -42,19 +42,12 @@ caritoko.addEventListener('keyup', (e) => {
         const kodetoko = caritoko.value;
 
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', `../server/cari-toko.php?kodetoko=${kodetoko}`, true);
+        xhr.open('GET', `/backend/caritoko?kodetoko=${kodetoko}`, true);
         xhr.onload = function () {
             if (xhr.status === 200) {
                 const hasil = JSON.parse(xhr.responseText);
 
-                const { kode_toko } = hasil[0];
-                const { nama_toko } = hasil[0];
-                const { ip_gateway } = hasil[0];
-                const { ip_induk } = hasil[0];
-                const { ip_anak } = hasil[0];
-                const { ip_stb } = hasil[0];
-                const { ip_wdcp } = hasil[0];
-                const { edparea } = hasil[0];
+                const { kode_toko, nama_toko, ip_gateway, ip_induk, ip_anak, ip_stb, ip_wdcp, edparea } = hasil;
 
                 olahDataIpCctv = ip_wdcp.split(".");
                 olahDataIpCctv2 = parseInt(olahDataIpCctv[3]);
@@ -79,16 +72,12 @@ caritoko.addEventListener('keyup', (e) => {
                 ip_cctv_ardistory.innerHTML = `${ip_cctv}`;
                 edparea_ardistory.innerHTML = `${edparea}`;
 
-                div_list_ip.style.display = 'flex';
-                div_list_ip_screensaver.style.display = 'none';
-
-
                 const xhro = new XMLHttpRequest();
-                xhro.open('GET', `../server/ping-monitor.php?ip_gateway=${ip_gateway}&ip_induk=${ip_induk}&ip_anak=${ip_anak}&ip_stb=${ip_stb}&ip_wdcp=${ip_wdcp}&ip_cctv=${ip_cctv}`, true);
+                xhro.open('GET', `/backend/ping-monitor?ip_gateway=${ip_gateway}&ip_induk=${ip_induk}&ip_anak=${ip_anak}&ip_stb=${ip_stb}&ip_wdcp=${ip_wdcp}&ip_cctv=${ip_cctv}`, true);
                 xhro.onload = async function () {
                     if (xhro.status === 200) {
                         const hasil = JSON.parse(xhro.responseText);
-
+                        console.log(hasil);
                         if (hasil[0].ping_gateway != false) {
                             ip_gateway_ardistory.style.color = 'lightgreen';
                         } else {

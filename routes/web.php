@@ -16,6 +16,11 @@ Route::controller(UserController::class)->middleware([GuestMiddleware::class])->
 // Home
 Route::controller(HomeController::class)->middleware([MemberMiddleware::class])->group(function () {
     Route::get('/', 'getHome');
+
+    // Backend
+    Route::get('/backend/caritoko', 'getDataToko');
+    Route::get('/backend/ping-monitor', 'getDataToko');
+
     Route::get('/logout', function () {
 
         Session::flush();
